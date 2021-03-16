@@ -1,35 +1,27 @@
 PROGRAM SayHello(INPUT, OUTPUT);
-USES 
-  DOS;
+USES dos;
 VAR
-  QueryString: STRING;
-  
-FUNCTION GetName(VAR QueryString: STRING): STRING;
-VAR
-  FirstPositionName, I: INTEGER;
-  Name: STRING;
-BEGIN { GetName }
-  Name := '';
-  FirstPositionName := POS('name=', QueryString) + 5;
-  FOR I := FirstPositionName TO LENGTH(QueryString)
-  DO
-    BEGIN
-      IF QueryString[I] = '&'
-      THEN
-        BREAK;
-      Name := CONCAT(Name, QueryString[I])
-    END;
-  GetName := Name;             
-END; { GetName }
-
+  Name, QueryString: STRING;
+  Index, NameIndex: INTEGER;
 BEGIN {SayHello}
   WRITELN('Content-Type: text/plain');
   WRITELN;
-  QueryString := GetEnv('QUERY_STRING'); 
-  WRITE('Hello ');
-  IF POS('name=', QueryString) <> 0
+  Name := 'name';
+  {Try to find 'name'}
+  QueryString := (GetEnv('QUERY_STRING'));
+  Index := POS(Name, QueryString);
+  IF Index <> 0
   THEN
-    WRITELN('dear, ' + GetName(QueryString))
+    BEGIN
+      NameIndex := Index + 5;
+      Index := POS('&', QueryString);
+      IF Index <> 0
+      THEN
+        Name := Copy(QueryString, NameIndex, Index - NameIndex)
+      ELSE
+        Name := Copy(QueryString, NameIndex, (Length(QueryString) + 1) - NameIndex);
+      WRITELN('Hello dear, ', Name, '!')
+    END
   ELSE
-    WRITELN('Anonymous!')   
-END. {SayHello}
+    WRITELN('Hello Anonymous!')
+END.{SayHello}

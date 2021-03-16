@@ -1,34 +1,34 @@
 PROGRAM WorkWithQueryString(INPUT, OUTPUT);
-USES 
-  dos;
-   
-FUNCTION GetQueryStringParameter(Key: STRING): STRING;
+USES
+  DOS;
+FUNCTION GetQueryStringParametr(Key: STRING): STRING;
 VAR
-  FirstPosition, I: INTEGER;
-  QueryString, ResultString: STRING;
-BEGIN { GetQueryStringParameter }
-  QueryString := GetEnv('QUERY_STRING');
-  ResultString := '';
-  IF POS(CONCAT(Key, '='), QueryString) <> 0
+  QueryString, Value: STRING;
+  Index, ValueIndex: INTEGER;
+BEGIN{GetQueryStringParametr}
+  {Try to find 'key'}
+  QueryString := (GetEnv('QUERY_STRING'));
+  Index := POS(Key, QueryString);
+  IF Index <> 0
   THEN
     BEGIN
-      FirstPosition := POS(CONCAT(Key, '='), QueryString) + LENGTH(Key) + 1;
-      FOR I := FirstPosition TO LENGTH(QueryString)
-      DO
-        BEGIN
-          IF QueryString[I] = '&'
-          THEN
-            BREAK;
-          ResultString := CONCAT(ResultString, QueryString[I])
-        END
-    END;
-  GetQueryStringParameter := ResultString        
-END; { GetQueryStringParameter }
-
-BEGIN { WorkWithQueryString }
+      Value := Copy(QueryString, Index, (Length(QueryString) + 1) - Index);
+      ValueIndex := POS('=', Value) + 1;
+      Index := POS('&', Value);
+      IF Index <> 0
+      THEN
+        Value := Copy(Value, ValueIndex, Index - ValueIndex)
+      ELSE
+        Value := Copy(Value, ValueIndex, Length(Value) + 1 - ValueIndex);
+     GetQueryStringParametr := Value
+    END
+  ELSE
+    GetQueryStringParametr := 'Can''t find parametr!'
+END;{GetQueryStringParametr}
+BEGIN{WorkWithQueryString}
   WRITELN('Content-Type: text/plain');
   WRITELN;
-  WRITELN('First Name: ', GetQueryStringParameter('first_name'));
-  WRITELN('Last Name: ', GetQueryStringParameter('last_name'));
-  WRITELN('Age: ', GetQueryStringParameter('age'))
-END. { WorkWithQueryString }
+  WRITELN('First Name: ', GetQueryStringParametr('first_name'));
+  WRITELN('Last Name: ', GetQueryStringParametr('last_name'));
+  WRITELN('Age: ', GetQueryStringParametr('age'));
+END.{WorkWithQueryString}
