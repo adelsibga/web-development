@@ -30,5 +30,5 @@ BEGIN{WorkWithQueryString}
   WRITELN;
   WRITELN('First Name: ', GetQueryStringParametr('first_name'));
   WRITELN('Last Name: ', GetQueryStringParametr('last_name'));
-  WRITELN('Age: ', GetQueryStringParametr('age'));
+  WRITELN('Age: ', GetQueryStringParametr('age'))
 END.{WorkWithQueryString}
