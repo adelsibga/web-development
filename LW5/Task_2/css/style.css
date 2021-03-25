@@ -1,33 +1,37 @@
-/* Globals */
-* {
+* 
+{
+
 	margin: 0;
 	padding: 0;
 }
 
-.has-floating:after {
+.has-floating::after 
+{
 	content: "";
 	display: block;
 	clear: both;
 }
 
-/* Overall page */
-.page {
+.page 
+{
 	width: 1000px;
 	margin: 100px 460px 0;
 	padding: 0 20px 0;
 }
 
-/* Header */
-.page__header {
+.page__header 
+{
 	margin-bottom: 45px;
 }
 
-.header__photo {
+.header__photo 
+{
 	float: left;
 	margin-right: 60px;
 }
 
-.quote {
+.quote 
+{
 	vertical-align: top;
 	background-image: url("../images/quotes.png");
 	background-repeat: no-repeat;
@@ -35,85 +39,97 @@
 }
 
 .header__photo,
-.header__quote {
+.header__quote 
+{
 	display: inline-block;
 }
 
-.header__quote {
+.header__quote 
+{
 	width: 590px;
 }
 
-.quote__text {
+.quote__text 
+{
 	font: italic 28px/42px Georgia, serif;
 	color: #848484;
 	width: 500px;
 	margin: 119px 0 2px 60px;
 }
 
-.quote__caption {
+.quote__caption 
+{
 	font: 600 16px/42px "Open Sans", sans-serif;
 	color: #333333;
 	width: 500px;
 	margin-left: 63px;
 }
 
-/* Content */
 .aside,
-.content__text {
+.content__text 
+{
 	display: inline-block;
 	vertical-align: top;
 }
 
-/* Aside content */
-.aside {
+.aside 
+{
 	float: left;
 }
 
-.content__aside {
+.content__aside 
+{
 	width: 330px;
 	margin-right: 60px;
 }
 
-.aside__heading {
+.aside__heading 
+{
 	font: 600 24px/32px "Open Sans", serif;
 	color: #15a98b;
 	margin-bottom: 12px;
 }
 
-.list {
+.list 
+{
 	font: 19px/36px Georgia, sans-serif;
 	color: #555555;
 	list-style-position: inside;
 	padding-left: 0;
 }
 
-.aside__list {
+.aside__list 
+{
 	margin-bottom: 41px;
 }
 
-.markered-list {
+.markered-list 
+{
 	list-style-type: none;
 	margin-top: 13px;
 }
 
-.markered-list__item {
+.markered-list__item 
+{
 	background: url("../images/marker.png") 0 50% no-repeat;
 	margin-left: 4px;
 	padding-left: 17px;
 }
 
-/* Text content */
-.text {
+.text 
+{
 	width: 570px;
 }
 
-.text__heading1 {
+.text__heading-first 
+{
 	font: bold 48px/42px "Open Sans", serif;
 	color: #333333;
 	margin-left: 4px;
 }
 
-.text__divider {
+.text__divider 
+{
 	width: 60px;
 	height: 6px;
 	border-radius: 3px;
@@ -121,30 +137,34 @@
 	margin: 31px 0 44px 0;
 }
 
-.text__heading2 {
+.text__heading-second 
+{
 	font: 36px/42px "Open Sans", serif;
 	color: #333333;
 	margin: 42px 0 15px -2px;
 }
 
-.text__paragraph {
+.text__paragraph 
+{
 	font: 19px/32px Georgia, sans-serif;
 	color: #555555;
 }
 
-.text__link {
+.text__link 
+{
 	margin-top: 41px;
 	font: 19px/32px Georgia, serif;
 	color: #15a98b;
 }
 
-.link {
-	color: inherit;
+.link 
+{
 	text-decoration: none;
 	border-bottom: 1px solid #15a98b;
 	border-radius: 1px;
 }
 
-.link:hover {
+.link:hover 
+{
 	color: #098d72;
 }
