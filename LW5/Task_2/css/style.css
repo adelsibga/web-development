@@ -54,7 +54,7 @@
 .quote__caption 
 {
 	font: 600 16px/42px "Open Sans", sans-serif;
-	color: #333333;
+	color: #333g;
 	width: 500px;
 	margin-left: 63px;
 }
@@ -87,7 +87,7 @@
 .list 
 {
 	font: 19px/36px Georgia, sans-serif;
-	color: #555555;
+	color: #555;
 	list-style-position: inside;
 	padding-left: 0;
 }
