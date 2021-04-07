@@ -31,7 +31,6 @@
 
 .quote 
 {
-	/*vertical-align: top;*/
 	background-image: url("../images/quotes.png");
 	background-repeat: no-repeat;
 	background-position: 0 50px;
@@ -54,7 +53,7 @@
 .quote__caption 
 {
 	font: 600 16px/42px "Open Sans", sans-serif;
-	color: #333g;
+	color: #333;
 	width: 500px;
 	margin-left: 63px;
 }
