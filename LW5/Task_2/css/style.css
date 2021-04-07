@@ -8,7 +8,7 @@
 {
 	content: "";
 	display: block;
-	clear: both;
+	clear: both;               /*Отменяет обтекание элемента одновременно с правого и левого края |span + css cleat both| */
 }
 
 .page 
@@ -31,7 +31,7 @@
 
 .quote 
 {
-	vertical-align: top;
+	/*vertical-align: top;*/
 	background-image: url("../images/quotes.png");
 	background-repeat: no-repeat;
 	background-position: 0 50px;
@@ -41,11 +41,6 @@
 .header__quote 
 {
 	display: inline-block;
-}
-
-.header__quote 
-{
-	width: 590px;
 }
 
 .quote__text 
@@ -123,7 +118,7 @@
 .text__heading-first 
 {
 	font: bold 48px/42px "Open Sans", serif;
-	color: #333333;
+	color: #333;
 	margin-left: 4px;
 }
 
@@ -139,14 +134,14 @@
 .text__heading-second 
 {
 	font: 36px/42px "Open Sans", serif;
-	color: #333333;
-	margin: 42px 0 15px -2px;
+	color: #333;
+	margin: 42px 0 15px 0px;
 }
 
 .text__paragraph 
 {
 	font: 19px/32px Georgia, sans-serif;
-	color: #555555;
+	color: #555;
 }
 
 .text__link 
@@ -158,6 +153,7 @@
 
 .link 
 {
+	transition: .3s all;   /*замедление изменения цвета ссылки всегда использовать  */
 	text-decoration: none;
 	border-bottom: 1px solid #15a98b;
 	border-radius: 1px;
@@ -165,5 +161,6 @@
 
 .link:hover 
 {
+	transition: .3s all;  /*замедление изменения цвета ссылки всегда использовать  */ 
 	color: #098d72;
 }
