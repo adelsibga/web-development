@@ -459,3 +459,34 @@
     color: #555;
     margin-left: 592px;
 }
+
+/*main__link*/
+
+.qwe
+{
+	text-decoration: none;
+	margin-top: 41px;
+	font: 19px/32px Georgia, serif;
+
+	color: #15a98b;
+	transition: .3s all;
+}
+
+.qwe:hover .qwert
+{ 
+	right: -10px;
+	transition: .3s all;
+}
+
+.qwer
+{
+	border-bottom: 1px solid #15a98b;
+}
+
+.qwert
+{
+	position: relative;
+	right: -5px;
+}
+
+/*main__link*/
