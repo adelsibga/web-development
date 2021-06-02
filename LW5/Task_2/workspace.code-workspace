@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "..\\.."
+		},
+		{
+			"path": "..\\..\\..\\ISPRING"
+		},
+		{
+			"path": "..\\..\\..\\HowToDo"
+		},
+		{
+			"path": "..\\..\\..\\LW"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "web-development"
+	}
+}
